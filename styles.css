@@ -1,0 +1,1105 @@
+/* =====================================================
+   PEP
+   PROPER, ELEGANT & PRESENTABLE
+   ===================================================== */
+
+
+/* =====================================================
+   CSS CASCADE / RESET
+   ===================================================== */
+
+/*
+   The universal selector applies to every element.
+
+   This is part of understanding the CSS cascade:
+   rules are applied to elements based on selectors,
+   specificity and order.
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =====================================================
+   BODY
+   ===================================================== */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-color: #f5f1eb;
+
+    color: #111;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   BLOCK & INLINE ELEMENTS
+   ===================================================== */
+
+/*
+   h1, h2, h3, p, header, section and footer
+   are naturally BLOCK elements.
+
+   Block elements normally:
+   - start on a new line
+   - take available width
+
+   <a> is naturally INLINE.
+
+   We change some <a> elements to inline-block
+   so padding and box-model properties work nicely.
+*/
+
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.header {
+    background-color: #050505;
+
+    color: white;
+
+    /*
+       BOX MODEL
+
+       Padding creates space INSIDE the element.
+    */
+
+    padding: 18px 5%;
+
+    border-bottom: 1px solid #222;
+}
+
+
+/* =====================================================
+   NAVBAR - FLEXBOX
+   ===================================================== */
+
+.navbar {
+    display: flex;
+
+    /*
+       FLEXBOX AXES
+
+       flex-direction: row means:
+
+       MAIN AXIS  = horizontal →
+       CROSS AXIS = vertical ↓
+    */
+
+    flex-direction: row;
+
+
+    /*
+       ALIGNMENT ON MAIN AXIS
+
+       justify-content controls the main axis.
+    */
+
+    justify-content: space-between;
+
+
+    /*
+       ALIGNMENT ON CROSS AXIS
+
+       align-items controls the cross axis.
+    */
+
+    align-items: center;
+
+
+    gap: 30px;
+}
+
+
+/* =====================================================
+   BRAND
+   ===================================================== */
+
+.brand {
+
+    /*
+       FLEX GROWING AND SHRINKING
+
+       flex-grow: 1
+       = can grow when extra space exists.
+
+       flex-shrink: 1
+       = can shrink when space becomes smaller.
+
+       flex-basis: 300px
+       = starting size.
+    */
+
+    flex: 1 1 300px;
+}
+
+
+.brand a {
+    color: white;
+
+    text-decoration: none;
+
+    font-family: Georgia, serif;
+
+    font-size: 27px;
+
+    font-weight: bold;
+
+    /*
+       The link is normally INLINE.
+
+       inline-block allows us to control its box.
+    */
+
+    display: inline-block;
+}
+
+
+.brand p {
+    color: #d49a65;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    margin-top: 3px;
+}
+
+
+/* =====================================================
+   NAVIGATION LINKS
+   ===================================================== */
+
+.nav-links {
+
+    /*
+       FLEXBOX
+    */
+
+    display: flex;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 32px;
+
+    list-style: none;
+
+    /*
+       Allows the navigation to shrink.
+    */
+
+    flex-shrink: 1;
+}
+
+
+.nav-links a {
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    /*
+       INLINE-BLOCK
+
+       Gives the link its own box.
+    */
+
+    display: inline-block;
+
+    padding: 8px 5px;
+
+    transition: 0.3s;
+}
+
+
+.nav-links a:hover {
+    color: #d49a65;
+}
+
+
+/* =====================================================
+   HERO SECTION
+   ===================================================== */
+
+.hero {
+
+    /*
+       FLEXBOX
+
+       Places the text and image beside each other.
+    */
+
+    display: flex;
+
+    flex-direction: row;
+
+
+    /*
+       MAIN AXIS
+
+       Space between text and image.
+    */
+
+    justify-content: space-between;
+
+
+    /*
+       CROSS AXIS
+       Vertically aligns both sides.
+    */
+
+    align-items: center;
+
+
+    gap: 50px;
+
+
+    /*
+       BOX MODEL
+
+       Padding = space inside the hero.
+    */
+
+    padding: 0 5%;
+
+    min-height: 495px;
+
+    background-color: #111;
+
+    color: white;
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   HERO CONTENT
+   ===================================================== */
+
+.hero-content {
+
+    /*
+       GROWING + SHRINKING
+
+       The content starts at 45%,
+       can grow when space is available,
+       and can shrink when necessary.
+    */
+
+    flex: 1 1 45%;
+
+    padding: 40px 0;
+}
+
+
+.hero-small-text {
+
+    color: #d49a65;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 15px;
+}
+
+
+.hero h1 {
+
+    font-size: 62px;
+
+    line-height: 0.98;
+
+    margin-bottom: 25px;
+
+    letter-spacing: -2px;
+}
+
+
+.hero h1 span {
+
+    /*
+       The <span> is INLINE by default.
+
+       We don't need to make it a block.
+    */
+
+    color: #d49a65;
+}
+
+
+.hero-description {
+
+    max-width: 430px;
+
+    color: #ddd;
+
+    font-size: 17px;
+
+    margin-bottom: 30px;
+}
+
+
+/* =====================================================
+   SHOP BUTTON
+   ===================================================== */
+
+.shop-button {
+
+    /*
+       <a> is normally INLINE.
+
+       We change it to INLINE-BLOCK.
+
+       This lets us use:
+       - padding
+       - border
+       - margin
+    */
+
+    display: inline-block;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    border: 1px solid #d49a65;
+
+    padding: 13px 45px;
+
+    background-color: transparent;
+
+    transition: 0.3s;
+}
+
+
+.shop-button:hover {
+
+    background-color: #d49a65;
+
+    color: #111;
+}
+
+
+/* =====================================================
+   HERO IMAGE
+   ===================================================== */
+
+.hero-image {
+
+    /*
+       FLEXBOX GROW + SHRINK
+
+       Starts at 55% of available space.
+    */
+
+    flex: 1 1 55%;
+
+    height: 495px;
+
+    /*
+       This is also a BOX.
+    */
+
+    overflow: hidden;
+}
+
+
+.hero-image img {
+
+    /*
+       Image fills its container.
+    */
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    /*
+       Images are inline by default.
+
+       display: block removes unwanted inline
+       whitespace around the image.
+    */
+
+    display: block;
+}
+
+
+/* =====================================================
+   CATEGORY SECTION
+   ===================================================== */
+
+.categories {
+
+    background-color: #f5f1eb;
+
+    padding: 55px 5% 70px;
+}
+
+
+/* =====================================================
+   CATEGORY HEADING
+   ===================================================== */
+
+.category-heading {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+
+.category-heading p {
+
+    color: #ad7850;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 5px;
+}
+
+
+.category-heading h2 {
+
+    font-family: Georgia, serif;
+
+    font-size: 34px;
+
+    color: #111;
+}
+
+
+/* =====================================================
+   CATEGORY CONTAINER - FLEXBOX
+   ===================================================== */
+
+.category-container {
+
+    display: flex;
+
+    /*
+       MAIN AXIS = horizontal
+    */
+
+    flex-direction: row;
+
+
+    /*
+       If there isn't enough space,
+       items can move onto another line.
+    */
+
+    flex-wrap: wrap;
+
+
+    /*
+       GAP controls space between flex items.
+    */
+
+    gap: 15px;
+
+
+    /*
+       MAIN AXIS ALIGNMENT
+    */
+
+    justify-content: center;
+
+
+    /*
+       CROSS AXIS ALIGNMENT
+    */
+
+    align-items: stretch;
+}
+
+
+/* =====================================================
+   CATEGORY CARD
+   ===================================================== */
+
+.category-card {
+
+    position: relative;
+
+    overflow: hidden;
+
+    height: 300px;
+
+
+    /*
+       FLEX GROWING + SHRINKING
+
+       Each card:
+       - can grow
+       - can shrink
+       - starts at 300px
+    */
+
+    flex: 1 1 300px;
+
+
+    /*
+       BOX MODEL
+
+       Border creates the outside edge.
+    */
+    border: 1px solid #ddd;
+
+    border-radius: 5px;
+}
+
+
+.category-card img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+
+    /*
+       Makes the image slightly darker,
+       helping the text remain readable.
+    */
+
+    filter: brightness(65%);
+
+    transition: 0.3s;
+}
+
+
+/* =====================================================
+   CARD HOVER
+   ===================================================== */
+
+.category-card:hover img {
+
+    filter: brightness(45%);
+
+    transform: scale(1.03);
+}
+
+
+/* =====================================================
+   CARD TEXT
+   ===================================================== */
+
+.card-overlay {
+
+    position: absolute;
+
+    left: 25px;
+
+    bottom: 25px;
+
+    color: white;
+}
+
+
+.card-overlay h3 {
+
+    font-family: Georgia, serif;
+
+    font-size: 28px;
+
+    margin-bottom: 5px;
+}
+
+
+.card-overlay a {
+
+    /*
+       INLINE-BLOCK
+
+       Again, this makes the link behave
+       like a small box.
+    */
+
+    display: inline-block;
+
+    color: #d49a65;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+footer {
+
+    background-color: #050505;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 30px;
+
+    /*
+       BOX MODEL:
+       Content
+       ↓
+       Padding
+       ↓
+       Border
+       ↓
+       Margin
+    */
+
+    border-top: 1px solid #222;
+}
+
+
+footer h3 {
+
+    font-family: Georgia, serif;
+
+    font-size: 24px;
+
+    margin-bottom: 5px;
+}
+
+
+footer p {
+
+    color: #aaa;
+
+    font-size: 13px;
+
+    margin-bottom: 4px;
+}
+
+
+/* =====================================================
+   RESPONSIVE DESIGN
+   ===================================================== */
+
+@media (max-width: 800px) {
+
+    /*
+       Change the Flexbox main axis from
+       horizontal to vertical.
+    */
+
+    .navbar {
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+
+    .nav-links {
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+    }
+
+
+    .hero {
+
+        /*
+           Main axis becomes vertical.
+
+           MAIN AXIS = vertical
+           CROSS AXIS = horizontal
+        */
+
+        flex-direction: column;
+
+        padding: 50px 5%;
+
+        text-align: center;
+    }
+
+
+    .hero-content {
+
+        flex-basis: auto;
+    }
+
+
+    .hero-image {
+
+        width: 100%;
+
+        height: 400px;
+    }
+
+
+    .hero h1 {
+
+        font-size: 45px;
+    }
+
+
+    .hero-description {
+
+        margin-left: auto;
+
+        margin-right: auto;
+    }
+
+
+    .category-container {
+
+        flex-direction: column;
+    }
+}
+
+/* =====================================================
+   PRODUCTS / BAGS PAGE
+   ===================================================== */
+
+.products {
+    padding: 60px 5%;
+    background-color: #f5f1eb;
+    min-height: 80vh;
+}
+
+
+/* PAGE HEADING */
+
+.products-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.products-heading p:first-child {
+    color: #ad7850;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.products-heading h1 {
+    font-family: Georgia, serif;
+    font-size: 40px;
+    margin: 8px 0;
+}
+
+
+/* PRODUCT CONTAINER */
+
+.product-container {
+    display: flex;
+
+    /*
+       MAIN AXIS = horizontal
+       CROSS AXIS = vertical
+    */
+
+    flex-direction: row;
+
+    /*
+       Allows cards to move to another row
+       when the screen becomes smaller.
+    */
+
+    flex-wrap: wrap;
+
+    gap: 25px;
+
+    justify-content: center;
+
+    align-items: stretch;
+}
+
+
+/* PRODUCT CARD */
+
+.product-card {
+    background-color: white;
+
+    /*
+       FLEX GROW + SHRINK + BASIS
+    */
+
+    flex: 1 1 250px;
+
+    /*
+       BOX MODEL
+    */
+
+    padding: 15px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 5px;
+
+    text-align: center;
+}
+
+
+/* PRODUCT IMAGE */
+
+.product-card img {
+    width: 100%;
+    height: 250px;
+
+    object-fit: cover;
+
+    display: block;
+
+    margin-bottom: 15px;
+}
+
+
+/* PRODUCT NAME */
+
+.product-card h2 {
+    font-family: Georgia, serif;
+    font-size: 20px;
+
+    margin-bottom: 8px;
+}
+
+
+/* PRICE */
+
+.price {
+    color: #ad7850;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    margin-bottom: 12px;
+}
+
+
+/* VIEW IMAGE */
+
+.view-image {
+    display: inline-block;
+
+    color: #111;
+
+    text-decoration: none;
+
+    border: 1px solid #ad7850;
+
+    padding: 8px 18px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+.view-image:hover {
+    background-color: #ad7850;
+
+    color: white;
+}
+
+
+/* BACK TO HOME */
+
+.back-home {
+    text-align: center;
+
+    margin-top: 50px;
+}
+
+.back-home a {
+    display: inline-block;
+
+    color: white;
+
+    background-color: #111;
+
+    text-decoration: none;
+
+    padding: 12px 25px;
+}
+
+.back-home a:hover {
+    background-color: #ad7850;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .product-container {
+        flex-direction: column;
+    }
+
+    .product-card {
+        flex-basis: auto;
+    }
+}
+/* =========================================
+   ABOUT US PAGE
+   ========================================= */
+
+.about-page {
+    background-color: #f5f1eb;
+    padding: 60px 8%;
+    min-height: 80vh;
+}
+
+
+/* PAGE HEADING */
+
+.about-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.about-heading p:first-child {
+    color: #ad7850;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.about-heading h1 {
+    font-family: Georgia, serif;
+    font-size: 45px;
+    margin: 10px 0;
+}
+
+
+/* ABOUT SECTIONS */
+
+.about-section {
+    max-width: 900px;
+    margin: 0 auto 45px;
+    padding: 30px;
+
+    background-color: white;
+
+    border: 1px solid #ddd;
+}
+
+
+.about-section h2 {
+    font-family: Georgia, serif;
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #111;
+}
+
+
+.about-section p {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.8;
+}
+
+
+/* WHAT WE OFFER */
+
+.about-list {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+
+    justify-content: center;
+}
+
+
+.about-item {
+    flex: 1 1 200px;
+
+    padding: 20px;
+
+    border: 1px solid #ddd;
+
+    text-align: center;
+}
+
+
+.about-item h3 {
+    font-family: Georgia, serif;
+
+    color: #ad7850;
+
+    margin-bottom: 8px;
+}
+
+
+/* WHY PEP */
+
+.why-pep {
+    text-align: center;
+}
+
+
+.why-pep h3 {
+    margin-top: 20px;
+
+    color: #ad7850;
+
+    letter-spacing: 2px;
+}
+
+
+/* CONTACT */
+
+.contact {
+    text-align: center;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .about-page {
+        padding: 40px 5%;
+    }
+
+    .about-heading h1 {
+        font-size: 35px;
+    }
+
+    .about-section {
+        padding: 20px;
+    }
+
+    .about-list {
+        flex-direction: column;
+    }
+
+}
